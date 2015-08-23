@@ -1,0 +1,15 @@
+{
+  "name": "AuthenticationManager",
+  "version": "0.0.0",
+  "description": "AuthenticationManager",
+  "main": "app.js",
+  "author": {
+    "name": "ali",
+    "email": "al_kh31@hotmail.com"
+  },
+  "dependencies": {
+    "guid": "0.0.12",
+    "node-amqp": "git+https://github.com/postwait/node-amqp",
+    "amqp": "git+https://github.com/HoS0/node-amqp.git"
+  }
+}
