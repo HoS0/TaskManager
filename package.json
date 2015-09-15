@@ -8,8 +8,9 @@
     "email": "al_kh31@hotmail.com"
   },
   "dependencies": {
+    "amqp": "git+https://github.com/HoS0/node-amqp.git",
     "guid": "0.0.12",
-    "node-amqp": "git+https://github.com/postwait/node-amqp",
-    "amqp": "git+https://github.com/HoS0/node-amqp.git"
+    "moment": "^2.10.6",
+    "node-amqp": "git+https://github.com/postwait/node-amqp"
   }
 }
