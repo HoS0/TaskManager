@@ -9,23 +9,27 @@ amqp = null
 datamanager = 'datamanager'
 
 SendFailResponceBack = (amqp, message, reason) ->
-    if message.responceNeeded
-        message.error = reason
-        message.responceNeeded = false
-        if message.sender
-            amqp.SendMessage message.sender, message    
-            console.log "--- loging --- " + reason + ": " + message
+    try 
+        if message.responceNeeded
+            message.error = reason
+            message.responceNeeded = false
+            if message.sender
+                amqp.SendMessage message.sender, message    
+                console.log "--- loging --- " + reason + ": " + message
+    catch e
+        # ignore
+
 
 exports.getProcessList = (amqp, message, callback) ->
-    request
-      method: 'GET',
-      url: url,
-      headers:
-        'Authorization': 'Basic ' + new Buffer(auth, "utf8").toString('base64')
-      body: ""
-    , (error, response, body) ->
+    try
+        request
+          method: 'GET',
+          url: url,
+          headers:
+            'Authorization': 'Basic ' + new Buffer(auth, "utf8").toString('base64')
+          body: ""
+        , (error, response, body) ->
 
-        try
             json = JSON.parse body;
             if response.statusCode isnt 200
                  return SendFailResponceBack amqp, message, "fail to connect to RabbitMQ server"
@@ -60,5 +64,5 @@ exports.getProcessList = (amqp, message, callback) ->
             if callback
                 callback res
 
-        catch e
-            SendFailResponceBack amqp, message, "an internal error happened"
+    catch e
+        SendFailResponceBack amqp, message, "an internal error happened"
