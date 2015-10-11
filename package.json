@@ -1,25 +1,26 @@
 {
-  "name": "AMQP-boilerplate",
-  "version": "0.0.0",
-  "description": "AMQP-boilerplate",
-  "repository": {
-    "type": "git",
-    "url": "https://alikh31@bitbucket.org/LightningCart/amqp-boilerplate.git"
-  },
+  "name": "al-kh.me",
+  "version": "0.0.1",
+  "description": "al-kh.me",
   "main": "app.js",
   "author": {
-    "name": "ali"
+    "name": "Ali Khoramshahi",
+    "email": ""
   },
   "dependencies": {
-    "async": "^1.4.2",
-    "guid": "0.0.12",
-    "node-amqp": "git+https://bitbucket.org/LightningCart/node-amqp.git"
-  },
-  "gitHead": "35aa74e90c25c163f6540cf20a2b1a69610cdbb1",
-  "readme": "﻿# AMQP-boilerplate\r\n\r\n## Message structure\r\n\r\n- id\r\n\r\n- sender\r\n\r\n        `service name` + `service id`\r\n\r\n- type\r\n    - `logger`\r\n    - `product`\r\n    - `order`\r\n    - `administration`\r\n    - `api`\r\n    - `auth`\r\n    - `Notification`\r\n\r\n- action\r\n    - `create`\r\n    - `retrieve`\r\n    - `update` \r\n    - `delete`\r\n\r\n- payload\r\n    - error ( when message is a response )\r\n        - 0\r\n        - error message\r\n\r\n- responceNeeded\r\n    - true\r\n    - false",
-  "readmeFilename": "README.md",
-  "_id": "AMQP-boilerplate@0.0.0",
-  "_shasum": "25f3f4735d6efc52165590dcf6d63b090b752068",
-  "_from": "..\\..\\..\\..\\AppData\\Local\\Temp\\npm-304-bf161e0e\\git-cache-b0dba747a4a9\\aaa571f9b50c56966900dc45b56d8023bf9d2678",
-  "_resolved": "git+https://github.com/HoS0/node-amqp.git#aaa571f9b50c56966900dc45b56d8023bf9d2678"
+    "amqp": "git+https://github.com/HoS0/node-amqp.git",
+    "body-parser": "^1.13.3",
+    "express": "3.4.4",
+    "fs": "0.0.2",
+    "geoip-lite": "^1.1.5",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.10.6",
+    "mongodb": "^1.4.28",
+    "mongoose": "^4.1.2",
+    "node-amqp": "git+https://github.com/postwait/node-amqp",
+    "node-uuid": "^1.4.3",
+    "nodejs-websocket": "^1.2.1",
+    "request": "^2.60.0",
+    "uuid": "^2.0.1"
+  }
 }
